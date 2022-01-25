@@ -1,0 +1,37 @@
+.menu {
+    background: #E0E0E0;
+    border-top: 1px solid #CFCFCF;
+}
+  
+.menuItem {
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid #CFCFCF;
+}
+
+.menuItem:hover {
+    background: white;
+    border-bottom: none;
+    border-right: 1px solid #CFCFCF;
+    border-left: 1px solid #CFCFCF;
+    margin: 0 -1px;
+  }
+  
+.menuItemCurrent .menuItemLink {
+    color: #333333;
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.3rem;
+}
+
+.menuItemLink {
+    text-decoration: none;
+    color: #555;
+    font-family: Roboto;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.menuItemLink:hover {
+    text-decoration: underline;
+    color: #1C60BB;
+}
