@@ -32,6 +32,7 @@ body {
     border-bottom: 1px solid var(--border-grey);
 }
 
+/* These were removed at some point...
 .menuMainItem:first-child:hover {
     border-left: none;
     margin-left: 0;
@@ -41,6 +42,7 @@ body {
     border-right: none;
     margin-right: 0;
 }
+*/
 
 .menuMainItem:hover {
     background: white;
@@ -72,6 +74,7 @@ body {
 .menuSub {
     height: 18rem;
     background: white;
+    display: none;
 }
 
 .menuSubCats {
