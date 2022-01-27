@@ -9,20 +9,25 @@ function showSubmenu() {
 function hideSubmenu() {
     const submenu = document.getElementsByClassName("menuSub")[0];
     submenu.style.display = "none";
+
+    if (activeMenuItem) {
+        activeMenuItem.classList.remove("menuMainItemActive");
+    }
+    activeMenuItem = null;
 }
   
 /*
     Sets the background when the menu is active.
 */
-let active = null;
+let activeMenuItem = null;
 
 function onMenuItemMouseEnter(item) {
 
     // "Deactivate" the prior menu item.
-    if (active) {
-        active.classList.remove("menuMainItemActive");
+    if (activeMenuItem) {
+        activeMenuItem.classList.remove("menuMainItemActive");
     }
-    active = item;
+    activeMenuItem = item;
     item.classList.add("menuMainItemActive");
     showSubmenu();
 }

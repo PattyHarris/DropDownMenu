@@ -3,7 +3,9 @@ const HOST = 'server.com/';
 // Populate the menus from the 'server'.
 
 function populateCategories(category) {
-    api.get(HOST + 'categories', {category}, function(categories) {
+    const activeMenuItemName = activeMenuItem.children[0].innerHTML;
+
+    api.get(HOST + 'categories', {category, menuItem: activeMenuItemName}, function(categories) {
         let newCategories = '';
         for (const category of categories) {
             const categoryElement = `
@@ -25,15 +27,49 @@ function populateCategories(category) {
 function getCategories(data) {
 
     if (data.category == 'Top') {
+        if (data.menuItem == 'Motors') {
+            return [
+                'Car',
+                'Motorcycle',
+                'Plane',
+                'Trucks',
+                'Wheels'
+            ];
+        }
+        if (data.menuItem == 'Fashion') {
+            return [
+                'Women\'s tops',
+                'Men\'s tops',
+                'Jeans',
+                'Hats'
+            ];
+        }
         return [
             'Server apple',
             'Server banana',
             'Server pear',
             'Server orange'
-      ];
+        ];
     }
 
     if (data.category == 'Additional') {
+        if (data.menuItem == 'Motors') {
+            return [
+                'Tires',
+                'Windshields',
+                'Ski racks',
+                'Doors',
+                'Windows'
+            ];
+        }
+        if (data.menuItem == 'Fashion') {
+            return [
+                'On sale',
+                'Red stuff',
+                'Gucci',
+                'New Arrivals'
+            ];
+        }
         return [
             'Server square',
             'Server circle',
