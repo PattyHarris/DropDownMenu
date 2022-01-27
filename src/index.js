@@ -10,7 +10,15 @@ function hideSubmenu() {
 /*
     Sets the background when the menu is active.
 */
+let active = null;
+
 function onMenuItemMouseEnter(item) {
+
+    // "Deactivate" the prior menu item.
+    if (active) {
+        active.classList.remove("menuMainItemActive");
+    }
+    active = item;
     item.classList.add("menuMainItemActive");
     showSubmenu();
 }
